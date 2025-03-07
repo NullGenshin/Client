@@ -102,6 +102,7 @@ class Api:
         config.read('settings.ini')
         if 'Game' not in config:
             config.add_section('Game')
+            config.set('Game', 'debug', 'false')
         config.set('Game', setting_name, value)
         with open('settings.ini', 'w') as configfile:
             config.write(configfile)
@@ -297,4 +298,4 @@ api.set_window(window)
 logger.info("Window created successfully")
 logger.debug("API exposed")
 logger.info("Starting webview")
-webview.start(debug=True, icon='web/favicon.png')
+webview.start(debug=api.get_setting('debug', 'false').lower() == 'true', icon='web/favicon.png')

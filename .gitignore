@@ -1,3 +1,4 @@
 /main.dist
 main-release.exe
 nuitka-crash-report.xml
+main-debug.exe

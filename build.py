@@ -29,20 +29,15 @@ debug_options = common_options + [
 ]
 
 def build_release():
+    print("Starting release build...")
     os.system(f"python -m nuitka {script_to_compile} " + " ".join(release_options))
+    print("Release build completed")
 
 def build_debug():
+    print("Starting debug build...")
     os.system(f"python -m nuitka {script_to_compile} " + " ".join(debug_options))
+    print("Debug build completed")
 
 if __name__ == '__main__':
-    # Create two processes for parallel builds
-    release_process = multiprocessing.Process(target=build_release)
-    debug_process = multiprocessing.Process(target=build_debug)
-
-    # Start both builds
-    release_process.start()
-    debug_process.start()
-
-    # Wait for both builds to complete
-    release_process.join()
-    debug_process.join()
+    build_release()
+    build_debug()
