@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launcher</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>    
+    <div class="titlebar pywebview-drag-region">
+        <div class="titlebar-title">NullGenshin Launcher</div>
+        <div class="TopSection">
+            <button class="settings-btn" onclick="toggleSettings()">Settings</button>
+            <button class="titlebar-button" onclick="window.pywebview.api.minimize()">─</button>
+            <button class="titlebar-button" onclick="window.pywebview.api.quit()">✕</button>
+        </div>
+    </div>
+    <div class="MiddleSection">
+        <div class="discord-widget">
+            <iframe src="https://discord.com/widget?id=1345861809768239156&theme=dark" width="350" height="475" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </div>
+    </div>
+    <div class="BottomSection">
+        <div class="status-info">
+            <p id="gameStatus">Status: Not Running</p>
+            <p id="patchName">Patch DLL: Loading...</p>
+        </div>
+        <div class="hash-info">
+            <p id="gamePatchHash">Game hash: Loading...</p>
+            <p id="patchHash">Patch hash: Loading...</p>
+        </div>
+        <div class="BottomSectionButtons">
+            <button class="kill-btn" onclick="window.pywebview.api.kill_game()">✕</button>
+            <button class="launch-btn" onclick="window.pywebview.api.launch_game()">Launch Game</button>
+        </div>
+
+    </div>
+
+    <div class="settings-menu" id="settingsMenu">
+        <h2>Settings</h2>
+        <div class="settings-option">
+            <button onclick="window.pywebview.api.setGamePath()">Set Game Directory</button>
+        </div>
+    </div>
+</body>
+</html>

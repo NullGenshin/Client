@@ -1,0 +1,246 @@
+body {    
+    margin: 0;
+    padding: 0;
+    background: url('background.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.titlebar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(34, 34, 34, 0.2);
+    backdrop-filter: blur(8px);
+    color: #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.titlebar-title {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+}
+
+.TopSection {
+    display: flex;
+    align-items: center;
+}
+
+.settings-btn {
+    background: transparent;
+    border: none;
+    color: #e0e0e0;
+    padding: 0 15px;
+    height: 50px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.settings-btn:hover {
+    background-color: rgba(47, 47, 47, 0.3);
+}
+
+.titlebar-button {
+    width: 45px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    color: #e0e0e0;
+    font-family: "Segoe MDL2 Assets", "Segoe UI", sans-serif;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.titlebar-button:hover {
+    background-color: rgba(47, 47, 47, 0.3);
+}
+
+.titlebar-button:last-child:hover {
+    background-color: rgba(196, 43, 28, 0.7);
+}
+
+.settings-menu {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(34, 34, 34, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1000;
+    color: #e0e0e0;
+    min-width: 300px;
+}
+
+.settings-menu.show {
+    display: block;
+}
+
+.settings-menu h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.settings-option button {
+    background-color: rgba(20, 20, 20, 0.3);
+    color: #e0e0e0;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+    backdrop-filter: blur(8px);
+}
+
+.settings-option button:hover {
+    background-color: rgba(68, 68, 68, 0.4);
+}
+
+.discord-widget {
+    position: fixed;
+    left: 10px;
+    top: 60px;
+    background-color: rgba(34, 34, 34, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 10;
+}
+
+.BottomSection {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(34, 34, 34, 0.2);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box;
+    color: #ffffff;
+    z-index: 5;
+    gap: 30px;
+}
+
+.status-info, .hash-info {
+    font-size: 1.5em;
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
+
+.status-info p, .hash-info p {
+    margin: 5px 0;
+}
+
+.launch-btn {
+    display: inline-block;
+    outline: none;
+    font-family: inherit;
+    font-size: 1.2em;
+    box-sizing: border-box;
+    border: none;
+    border-radius: .3em;
+    height: 3.25em;
+    line-height: 2.5em;
+    text-transform: uppercase;
+    padding: 0 1.5em;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(110,80,20,.4),
+                inset 0 -2px 5px 1px rgba(139,66,8,1),
+                inset 0 -1px 1px 3px rgba(250,227,133,1);
+    background-image: linear-gradient(160deg, #a54e07, #b47e11, #fef1a2, #bc881b, #a54e07);
+    border: 1px solid #a55d07;
+    color: rgb(120,50,5);
+    text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    background-size: 100% 100%;
+    background-position: center;
+    margin-left: auto;
+}
+
+.launch-btn:hover {
+    background-size: 150% 150%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23),
+                inset 0 -2px 5px 1px #b17d10,
+                inset 0 -1px 1px 3px rgba(250,227,133,1);
+    border: 1px solid rgba(165,93,7,.6);
+    color: rgba(120,50,5,.8);
+}
+
+.launch-btn:active {
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(110,80,20,.4),
+                inset 0 -2px 5px 1px #b17d10,
+                inset 0 -1px 1px 3px rgba(250,227,133,1);
+}
+
+.BottomSectionButtons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.kill-btn {
+    display: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: none;
+    border-radius: .3em;
+    height: 3.25em;
+    width: 3.25em;
+    line-height: 2.5em;
+    text-transform: uppercase;
+    padding: 0;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(110,80,20,.4),
+                inset 0 -2px 5px 1px rgba(139,66,8,1),
+                inset 0 -1px 1px 3px rgba(250,227,133,1);
+    background-image: linear-gradient(160deg, #a54e07, #b47e11, #fef1a2, #bc881b, #a54e07);
+    border: 1px solid #a55d07;
+    color: rgb(120,50,5);
+    text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    background-size: 100% 100%;
+    background-position: center;
+    order: 0;
+}
+
+.kill-btn:hover {
+    background-size: 150% 150%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23),
+                inset 0 -2px 5px 1px #b17d10,
+                inset 0 -1px 1px 3px rgba(250,227,133,1);
+    border: 1px solid rgba(165,93,7,.6);
+    color: rgba(120,50,5,.8);
+}
+
+.kill-btn:active {
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(110,80,20,.4),
+                inset 0 -2px 5px 1px #b17d10,
+                inset 0 -1px 1px 3px rgba(250,227,133,1);
+}
