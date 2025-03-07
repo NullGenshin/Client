@@ -243,7 +243,7 @@ class Api:
             print(result.stdout.decode('cp866'))
             
             # Start mitmdump with certificate and key
-            mitmdump_path = os.path.abspath('./mitmdump.exe')
+            mitmdump_path = os.path.abspath('./proxy/mitmdump.exe')
             proxy_script = os.path.abspath(os.path.join('proxy', 'proxy.py'))
             proxy_process = subprocess.Popen([
                 mitmdump_path,

@@ -99,6 +99,10 @@ body {
     margin-bottom: 20px;
 }
 
+.settings-option {
+    margin-bottom: 15px;
+}
+
 .settings-option button {
     background-color: rgba(20, 20, 20, 0.3);
     color: #e0e0e0;
