@@ -279,6 +279,10 @@ class Api:
                 if proc.info['name'] == gameExecutable:
                     proc.kill()
 
+    def openUrl(self, url):
+        webview.windows[0].evaluate_js(f'window.open("{url}", "_blank")')
+        logger.info(f"Opening download URL: {url}")
+
 api = Api()
 window = webview.create_window(
     'NullGenshin Launcher',
